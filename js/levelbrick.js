@@ -1,13 +1,15 @@
-function LevelBrick(scene) {
+function LevelBrick(game, row, col) {
 	var renderer = null;
+	this.row = row;
+	this.col = col;
 	
-	this.initialize = function(scene) {
+	this.initialize = function(game) {
 		var that = this;
 		that.renderer = new LevelBrickRenderer();
-		that.renderer.initialize(scene);		
+		that.renderer.initialize(game, that.row, that.col);		
 	}
 	
-	this.initialize(scene);
+	this.initialize(game);
 	
 	
 }

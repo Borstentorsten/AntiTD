@@ -12,6 +12,8 @@ function Game() {
 	var container = null;
 	var camera = null;
 	
+	this.isLevelEditor = true;
+	
 	this.initialize = function() {
 		var that = this;
 		that.container = document.getElementById("container");
@@ -30,7 +32,7 @@ function Game() {
 			
 			this.container.appendChild(this.renderer.domElement);
 			
-			var level = new Level(this.scene);
+			var level = new Level(this);
 		}
 	};
 	
@@ -42,6 +44,8 @@ function Game() {
 
 window.addEventListener("load", function() {
 	var game = new Game();
-	game.initialize();
-	game.run();
+	ResourceFactory.loadTextures(function() {
+		game.initialize();
+		game.run();		
+	});
 });
