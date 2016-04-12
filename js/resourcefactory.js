@@ -11,6 +11,13 @@ ResourceFactory = {
 		var that = this;
 		that.textureLoader.load("http://127.0.0.1:8020/AntiTD/res/img/png/grass.png", function(texture) {
 				that.textureGrass = texture;
+				that.loadRoad(doneCallback);
+			}, this.textureLoadProgress, this.textureLoadError);
+	},
+	loadRoad: function(doneCallback) {
+		var that = this;
+		that.textureLoader.load("http://127.0.0.1:8020/AntiTD/res/img/png/road.png", function(texture) {
+				that.textureRoad = texture;
 				doneCallback();
 			}, this.textureLoadProgress, this.textureLoadError);
 	},

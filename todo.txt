@@ -1,0 +1,3 @@
+LevelBrickRenderer -> enum type not visible
+ResourceFactory: load textures without full url (relative)
+game.onmousedown -> get the correct object and change the type (grass to road)
